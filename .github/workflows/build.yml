@@ -58,9 +58,9 @@ jobs:
         - name: Run Python Program
          if: always()
          run: |
-           cd geneticmusic/
+           cd geneticmusic
            poetry install
-           poetry run geneticmusic --param hello
+           poetry run geneticmusic
         # Run the black code formatter in checking mode
         - name: Run Black Code Formatter
           run: |
