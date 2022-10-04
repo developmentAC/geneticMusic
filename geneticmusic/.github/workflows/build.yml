@@ -19,7 +19,8 @@ jobs:
     strategy:
       matrix:
         # Performs all actions on different versions of Python
-        python-version: ["3.10"]
+        python-version: ["3.8.10"]
+        # python-version: ["3.10"]
     # Define the workflow steps
     steps:
     # Checkout the code of the repository
