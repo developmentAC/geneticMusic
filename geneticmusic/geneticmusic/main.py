@@ -14,7 +14,8 @@ console = Console()
 
 def main(
 	param: str = "",
-    data_file: Path = typer.Option(...),
+    # data_file: Path = typer.Option(...),
+    data_file: Path = typer.Option(""),
 ):
 	"""Determine parameters"""
 	console.print("Welcome to GeneticMusic :sparkles:")
