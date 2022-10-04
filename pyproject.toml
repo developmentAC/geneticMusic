@@ -16,7 +16,6 @@ rich = "^12.6.0"
 numpy = "1.19.5"
 scipy = "1.5.4"
 
-
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"
 mypy = "^0.982"
