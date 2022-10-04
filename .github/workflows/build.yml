@@ -53,7 +53,6 @@ jobs:
           uses: abatilo/actions-poetry@v2.0.0
           with:
             poetry-version: 1.1.8
-        # OBC Start
         # Run the Python program
         - name: Run Python Program
          if: always()
