@@ -57,33 +57,33 @@ jobs:
         - name: Run Python Program
           if: always()
           run: |
-            cd datasummarizer
+            cd geneticmusic
             poetry install
-            poetry run datasummarizer --data-file input/data.txt
+            poetry run geneticmusic --help
         # Run the black code formatter in checking mode
         - name: Run Black Code Formatter
           run: |
-            cd datasummarizer
+            cd geneticmusic
             poetry run task black
         # Run the flake8 linting tool
         - name: Run Flake8 Linting Tool
           run: |
-            cd datasummarizer
+            cd geneticmusic
             poetry run task flake8
         # Run the pydocstyle linting tool
         - name: Run Pydocstyle Linting Tool
           run: |
-            cd datasummarizer
+            cd geneticmusic
             poetry run task pydocstyle
         # Run the pylint linting tool
         - name: Run Pylint Linting Tool
           run: |
-            cd datasummarizer
+            cd geneticmusic
             poetry run task pylint
         # Run the mypy type checking tool
         - name: Run Pylint Linting Tool
           run: |
-            cd datasummarizer
+            cd geneticmusic
             poetry run task mypy
         # Run GatorGrader: see config/gatorgrade.yml
         - name: Run GatorGrader with GatorGrade
