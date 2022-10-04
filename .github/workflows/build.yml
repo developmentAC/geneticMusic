@@ -55,12 +55,12 @@ jobs:
             poetry-version: 1.1.8
         # OBC Start
         # Run the Python program
-        #- name: Run Python Program
-        #  if: always()
-        #  run: |
-        #    cd geneticmusic
-        #    poetry install
-        #    poetry run geneticmusic --param hello
+        - name: Run Python Program
+         if: always()
+         run: |
+           cd geneticmusic/
+           poetry install
+           poetry run geneticmusic --param hello
         # Run the black code formatter in checking mode
         - name: Run Black Code Formatter
           run: |
