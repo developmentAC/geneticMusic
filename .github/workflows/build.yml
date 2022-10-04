@@ -59,7 +59,7 @@ jobs:
           run: |
             cd geneticmusic
             poetry install
-            poetry run geneticmusic --help
+            oetry run geneticmusic --param hello
         # Run the black code formatter in checking mode
         - name: Run Black Code Formatter
           run: |

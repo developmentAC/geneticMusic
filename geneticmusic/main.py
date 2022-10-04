@@ -9,11 +9,11 @@ cli = typer.Typer()
 
 
 @cli.command()
-def main(myParameter: str = "", myFile: str = ""):
+def main(param: str = "", myFile: str = ""):
     """determine parameter"""
     console = Console()
-    console.print("Welcome to GeneticMusic {:music:}")
-    console.print(f"   myParameter = {myParameter}")
-
+    console.print("Welcome to GeneticMusic :sparkles:")
+    console.print(f"   myParameter = {param}")
+    console.print(":brick:" * 20)
 
 # end of main()
