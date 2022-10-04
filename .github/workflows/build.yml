@@ -58,6 +58,7 @@ jobs:
           if: always()
           run: |
             cd geneticmusic
+            cd geneticmusic
             poetry install
             poetry run geneticmusic
         # Run the black code formatter in checking mode
