@@ -6,6 +6,8 @@ import typer
 
 # create a Typer object to support the command-line interface
 cli = typer.Typer()
+
+
 @cli.command()
 def main(myParameter: str = "", myFile: str = ""):
     """determine parameter"""
@@ -13,5 +15,5 @@ def main(myParameter: str = "", myFile: str = ""):
     console.print("Welcome to GeneticMusic {:music:}")
     console.print(f"   myParameter = {myParameter}")
 
-# end of main()
 
+# end of main()
