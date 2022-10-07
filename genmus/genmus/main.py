@@ -130,7 +130,6 @@ sd_list = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
 def getArguments2(bighelp: bool=False, opt: str = ""):
 	""" New get arguments function """
 
-	# if opt.lower() == "h" or 
 	if bighelp == True: # print up some extra help about how to start a virtual env
 		gh.helper()
 		# gh.helper_extended()
