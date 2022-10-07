@@ -1,23 +1,22 @@
 [tool.poetry]
-name = "geneticmusic"
+name = "genmus"
 version = "0.1.0"
-description = ""
+description = "genmus: Plays DNA in piano from a FASTA file."
 authors = ["Oliver Bonham-Carter <obonhamcarter@allegheny.edu>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-geneticmusic = "geneticmusic.main:cli"
+genmus = "genmus.main:cli"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-biopython = "^1.79"
-typer = "^0.6.1"
+python = ">=3.10,<3.12"
+scipy = "1.9.1"
 rich = "^12.6.0"
-numpy = "1.19.5"
-scipy = "1.5.4"
+typer = "^0.6.1"
+biopython = "^1.79"
 
-[tool.poetry.dev-dependencies]
-black = "^22.8.0"
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
 mypy = "^0.982"
 
 [build-system]
