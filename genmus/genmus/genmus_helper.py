@@ -456,22 +456,22 @@ def helper():
     print("\tOptions:")
     print(
         printWithColour(BIGreen, f"\t [+]"),
-        printWithColour(BICyan, f"[-H]"),
+        printWithColour(BICyan, f"[--bighelp]"),
         printWithColour(BIYellow, "This page, right?"),
     )
     print(
         printWithColour(BIGreen, f"\t [+]"),
-        printWithColour(BICyan, "[-S]"),
+        printWithColour(BICyan, "[--opt S]"),
         printWithColour(BIYellow, "Create a music scale"),
     )
     print(
         printWithColour(BIGreen, f"\t [+]"),
-        printWithColour(BICyan, "[-T]"),
+        printWithColour(BICyan, "[--opt T]"),
         printWithColour(BIYellow, "Create song: Twinkle-Twinkle Little Star"),
     )
     print(
         printWithColour(BIGreen, f"\t [+]"),
-        printWithColour(BICyan, "[-E]"),
+        printWithColour(BICyan, "[--opt E]"),
         printWithColour(
             BIYellow, "Instructions for running this wonderous tool.\n\t\t"
         ),
