@@ -226,6 +226,7 @@ def begin(fastaFile_str):
         ["A", "T", "C", "G"], 3
     )  # get the permutations of length 3 of ATGC words
     # print(gh.printWithColour(gh.BIYellow,f"\n\t Frequencies of words from Freq_dic :\n\t {freq_dic},\n\t Number of words: {len(freq_dic)}"))
+    print(f"freq_dic : {freq_dic}")
 
     print(gh.printWithColour(gh.BIGreen, f"Preparing words..."))
     # need to assign most common piano notes to most common words.
