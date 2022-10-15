@@ -69,13 +69,16 @@ def getArguments(
         print(f" Is this a real file :: {launcher.isFileConfirmed(dataFile)}")
         seq_dic = openFile.openFastaFile(dataFile)
         # print(f"getArgruments()  File opened :{data}")
+        baseLimit_int = 50 # determine how much of the sequnce to print to screen.
         for i in seq_dic:
             print(
                 launcher.printWithColour(launcher.BIGreen, f"\t [+=+] "),
                 launcher.printWithColour(launcher.BIYellow, f"{i}"),
                 ":",
-                launcher.printWithColour(launcher.BICyan, f"{seq_dic[i]}"),
+                launcher.printWithColour(launcher.BICyan, f"{seq_dic[i][:baseLimit_int]}"),
             )
+            if len(seq_dic[i]) > baseLimit_int: print(f"(\t Note: printing sequence to {baseLimit_int} bases)")
+
         begin(seq_dic)
 
 
@@ -83,13 +86,13 @@ def getArguments(
 
 
 def pairMusicWordWithNote(this_dic, Twinkle_list):
-    """Pair a musical note with a word; most common words to most common notes. this_dic is the freqs of words in a sequence."""
+    """ Pair a musical note with a word; most common words to most common notes. this_dic is the freqs of words in a sequence."""
 
     # print("pairMusicWordWithNote()")
 
     myMaxValueThisDic_int = max(this_dic.values())
     print(
-        "\t Frequencies; ",
+        launcher.printWithColour(launcher.BIYellow,"\t [+] Frequencies; "),
         launcher.printWithColour(launcher.BIGreen, f"{this_dic}"),
         "Max Value :",
         launcher.printWithColour(launcher.BICyan, f" {myMaxValueThisDic_int}"),
@@ -136,11 +139,10 @@ def pairMusicWordWithNote(this_dic, Twinkle_list):
 
 
 def sequenceSlidingWindow(seq_str, n_dic):
-    """Function to slide over sequence, three bases at a time, to identify words and to create a music score. Inputs: sequence and the word to note conversions."""
+    """ Function to slide over sequence, three bases at a time, to identify words and to create a music score. Inputs: sequence and the word to note conversions."""
 
-    # print(printWithColour(BICyan,"sequenceSlidingWindow()"))
-
-    # print(printWithColour(BIYellow,f"{seq_str}, {n_dic}"))
+    print(launcher.printWithColour(launcher.BICyan,"\t [+] sequenceSlidingWindow()"))
+    print(launcher.printWithColour(launcher.BIYellow,f" {n_dic}"))
     # The length of sequence must be divisible by 3. If not, add dummy chars to end
 
     while len(seq_str) % 3 != 0:
@@ -151,6 +153,7 @@ def sequenceSlidingWindow(seq_str, n_dic):
     playNotesDuration_list = []  # holds the durations of each note to play from seq
     for i in range(0, len(seq_str), 3):
         word_str = seq_str[i : i + 3]
+        # print(f" sequenceSlidingWindow() :: {word_str}, note: {n_dic[word_Str]}")
         note_str = ""
         try:
             note_str = n_dic[word_str]
@@ -219,14 +222,15 @@ def begin(seq_dic: dict) -> None:
     freq_dic = getWordCartesianProducts(
         ["A", "T", "C", "G"], 3
     )  # get the permutations of length 3 of ATGC words
-    print(launcher.printWithColour(launcher.BIYellow,f"\n\t Frequencies of words from Freq_dic :\n\t {freq_dic},\n\t Number of words: {len(freq_dic)}"))
-    print(f"freq_dic : {freq_dic}")
+    # print(launcher.printWithColour(launcher.BIYellow,f"\n\t Frequencies of words from Freq_dic :\n\t {freq_dic},\n\t Number of words: {len(freq_dic)}"))
+    # print(f"freq_dic : {freq_dic}")
 
-    print(launcher.printWithColour(launcher.BIGreen, f"Preparing words..."))
+    # print(launcher.printWithColour(launcher.BIGreen, f"Preparing words..."))
+
     # need to assign most common piano notes to most common words.
     for i in seq_dic:
         # for i in freq_dic:
-        print(f"begin(): seq is {i}")
+        print(launcher.printWithColour(launcher.BICyan,f"\t [+] begin() seq is {i}"))
         # print(launcher.printWithColour(launcher.BIBlue,f"\t {i}"),":", launcher.printWithColour(launcher.BIGreen,f"{seq_dic[i]}"))
         this_dic = getWordFreq(
             seq_dic[i], freq_dic

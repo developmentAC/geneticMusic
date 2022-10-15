@@ -14,8 +14,8 @@ def openFastaFile(fastaFile_str: str) -> dict:
         from Bio import SeqIO  # biopython
     except ModuleNotFoundError:
         print(
-            printWithColour(
-                BIRed,
+            launcher.printWithColour(
+                launcher.BIRed,
                 f"\t [+] The BioPython library is not installed.\n\t Please install, or use option -E \n\t to see other options to use {THISPROG}.",
             )
         )
@@ -32,14 +32,12 @@ def openFastaFile(fastaFile_str: str) -> dict:
         # print(record.seq, type(record.seq) )
     if len(seq_dic) == 0:
         print(
-            printWithColour(
-                BIRed, f"\t [+] Bad format or incorrect Fasta file: <<{fastaFile_str}>>"
+            launcher.printWithColour(
+                launcher.BIRed, f"\t [+] Bad format or incorrect Fasta file: <<{fastaFile_str}>>"
             )
         )
         exit()
     print(launcher.printWithColour(launcher.BIYellow, f"\t Listed Sequences :"))
-    # for i in seq_dic:
-    # 	print(launcher.printWithColour(launcher.BIGreen, f"\t [+] "), launcher.printWithColour(launcher.BIYellow, f"{i}"),":",launcher.printWithColour(launcher.BICyan, f"{seq_dic[i]}"))
 
     return seq_dic
     # end of openFastaFile()
