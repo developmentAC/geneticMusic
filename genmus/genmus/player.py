@@ -3,6 +3,12 @@
 
 """ This file contains information about playing notes. """
 
+# Utility functions for writing music in Python.
+# Some music playing code was borrowed from the below open source project 
+# Ref: https://github.com/katieshiqihe/music_in_python/blob/main/twinkle.py
+# Ref: https://towardsdatascience.com/music-in-python-2f054deb41f4
+
+
 ###########################
 
 right_hand_notes = [

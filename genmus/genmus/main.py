@@ -7,6 +7,8 @@
 # from collections import Counter
 import sys, random, csv, os
 from genmus import player as player
+from genmus import launcher as launcher
+
 
 # from scipy.io import wavfile
 
@@ -32,7 +34,14 @@ import numpy as np
 @cli.command()
 
 # def getArguments(argv_list):
-def getArguments(bighelp: bool = False, opt: str = "", datafile: str = ""):
+# def getArguments(bighelp: bool = False, opt: str = "", dataFile: str = ""):
+
+def getArguments(
+    bighelp: bool = False,
+    opt: str = "",
+    dir: Path = typer.Option(None),
+    file: Path = typer.Option(None),
+) -> str:
     """New get arguments function"""
 
     if bighelp == True:  # print up some extra help about how to start a virtual env
@@ -61,8 +70,10 @@ def getArguments(bighelp: bool = False, opt: str = "", datafile: str = ""):
             player.right_hand_duration,
         )
         exit()
-    if datafile.lower:
-        print(f"data file == {datafile}")
+    if dataFile.lower:
+        dataFile = dir / dataFile
+        print(f"data file == {dataFile}")
+        launcher.isFileConfirmed(dataFile)
 
 
 # end of getArguments()
@@ -150,8 +161,8 @@ def getArguments(bighelp: bool = False, opt: str = "", datafile: str = ""):
 
 def begin(fastaFile_str):
     """Driver function"""
-    print(gh.printWithColour(gh.BIYellow, f"\t [+] File to open: {fastaFile_str}\n"))
-    seq_dic = gh.openDnaSeq(fastaFile_str)
+    # print(gh.printWithColour(gh.BIYellow, f"\t [+] File to open: {fastaFile_str}\n"))
+    # seq_dic = gh.openDnaSeq(fastaFile_str)
     freq_dic = gh.getWordCartesianProducts(
         ["A", "T", "C", "G"], 3
     )  # get the permutations of length 3 of ATGC words
