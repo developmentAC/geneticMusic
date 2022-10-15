@@ -11,7 +11,7 @@ AUTHORMAIL = "obonhamcarter@allegheny.edu"
 
 from pathlib import Path
 
-import os,random,sys
+import os, random, sys
 
 THISPROG = sys.argv[0].replace("./", "")
 WHATISTHIS_p1 = f"\n\t{THISPROG}: Plays DNA in piano from a FASTA file."
@@ -90,7 +90,6 @@ banner1_str = """
 # banner ref: https://manytools.org/hacker-tools/ascii-banner/
 
 
-
 def bannerScreen(myCount_int):
     """prints a charming and colourful little message for the user"""
     # report the perceived OS type
@@ -107,7 +106,6 @@ def bannerScreen(myCount_int):
 
 
 # end of bannerScreen()
-
 
 
 def helper():
@@ -151,7 +149,9 @@ def helper():
     )
     print(printWithColour(BIBlue, "\n\t # --------------------------"))
 
+
 # end of helper()
+
 
 def helper_extended():
     """Function to print up extra information for the user."""
@@ -172,7 +172,9 @@ def printWithColour(colCode_str, myMessage_str):
         pass
     return myMessage_str
 
+
 # end of printWithColour()
+
 
 def checkDataDir(dir_str):
     # function to determine whether a data output directory exists.
@@ -188,7 +190,9 @@ def checkDataDir(dir_str):
         # printErrorByPlatform("\t Error creating directory or directory already present ... ")
         return 0
 
+
 # end of checkDataDir()
+
 
 def get_platformType():
     """Function to dermine the OS type."""
@@ -205,6 +209,7 @@ def get_platformType():
 
 # end of get_platformType()
 
+
 def isFileConfirmed(file: Path) -> bool:
     """Confirm that the provided file is a valid path."""
     # determine if the file is not None and if it is a file
@@ -214,4 +219,6 @@ def isFileConfirmed(file: Path) -> bool:
             return True
     # the file was either none or not valid
     return False
+
+
 # end of isFileConfirmed()

@@ -4,7 +4,7 @@
 """ This file contains information about playing notes. """
 
 # Utility functions for writing music in Python.
-# Some music playing code was borrowed from the below open source project 
+# Some music playing code was borrowed from the below open source project
 # Ref: https://github.com/katieshiqihe/music_in_python/blob/main/twinkle.py
 # Ref: https://towardsdatascience.com/music-in-python-2f054deb41f4
 
@@ -574,8 +574,16 @@ def apply_pedal(note_values, bar_value):
     """
 
     # print("apply_pedal()")
-    print(launcher.printWithColour(launcher.BIBlue, f"\t[+] Initial bar_value = {bar_value}"))
-    print(launcher.printWithColour(launcher.BIBlue, f"\t[+] sum(note_values) = {sum(note_values)}"))
+    print(
+        launcher.printWithColour(
+            launcher.BIBlue, f"\t[+] Initial bar_value = {bar_value}"
+        )
+    )
+    print(
+        launcher.printWithColour(
+            launcher.BIBlue, f"\t[+] sum(note_values) = {sum(note_values)}"
+        )
+    )
     # print(launcher.printWithColour(BIRed,f" note_values = {note_values}"))
 
     if (
@@ -595,7 +603,11 @@ def apply_pedal(note_values, bar_value):
             # print(f"counter = {counter}, sum(note_values) = {sum(note_values)}")
         bar_value = counter
 
-    print(launcher.printWithColour(launcher.BIBlue, f"\t[+] Reset bar_value = {bar_value}"))
+    print(
+        launcher.printWithColour(
+            launcher.BIBlue, f"\t[+] Reset bar_value = {bar_value}"
+        )
+    )
     # print(launcher.printWithColour(launcher.BIGreen,f"\t[+] sum(note_values) = {sum(note_values)}"))
 
     assert sum(note_values) % bar_value == 0
@@ -675,7 +687,6 @@ def get_song_data(
 # end of get_song_data()
 
 
-
 def makeNotesFromSeq():
     """determine a conversion of dna to notes for playing"""
     print("makeNotesFromSeq()")
@@ -739,7 +750,7 @@ def makeMusicDemo(
 # end of makeMusicDemo()
 
 
-def makeMusicFromChars(name_str : str, notes_list: list, duration_list: list):
+def makeMusicFromChars(name_str: str, notes_list: list, duration_list: list):
     """Function to convert chars to musical wav file."""
     try:
         from scipy.io import wavfile
@@ -780,6 +791,11 @@ def makeMusicFromChars(name_str : str, notes_list: list, duration_list: list):
     filename = launcher.MYOUTPUT_DIR + name_str
     # wavfile.write(launcher.MYOUTPUT_DIR + name_str, 44100, data.astype(np.int16))
     wavfile.write(filename, 44100, data.astype(np.int16))
-    print(launcher.printWithColour(launcher.BICyan, f"\t[+] Saving <{filename}>\n" + launcher.White))
+    print(
+        launcher.printWithColour(
+            launcher.BICyan, f"\t[+] Saving <{filename}>\n" + launcher.White
+        )
+    )
+
 
 # end of makeMusicFromChars()

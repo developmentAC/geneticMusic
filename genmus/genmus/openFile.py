@@ -5,6 +5,7 @@ from genmus import launcher
 
 """ This file contains code to facilitate loading files and running the program. """
 
+
 def openFastaFile(fastaFile_str: str) -> dict:
     """open a fasta file, return the dna sequences"""
 
@@ -20,7 +21,11 @@ def openFastaFile(fastaFile_str: str) -> dict:
         )
         exit()
 
-    print(launcher.printWithColour(launcher.BIYellow, f"\t [+] Opening FASTA file {fastaFile_str}\n"))
+    print(
+        launcher.printWithColour(
+            launcher.BIYellow, f"\t [+] Opening FASTA file {fastaFile_str}\n"
+        )
+    )
     seq_dic = {}
     for record in SeqIO.parse(fastaFile_str, "fasta"):
         seq_dic[(str(record.id))] = str(record.seq).upper()

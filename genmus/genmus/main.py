@@ -3,42 +3,35 @@
 
 """ Program to play DNA input files."""
 
-
 # from collections import Counter
-import sys, random, csv, os
-from genmus import openFile, player
-
-####
+from genmus import openFile, player, launcher
 
 import numpy as np
 
 # from scipy.io import wavfile
-import sys, random, os, math
+import sys, random, os
 
 # from Bio import SeqIO #biopython
 from itertools import permutations
+
 # import itertools
 
-
-####
 # from scipy.io import wavfile
 
-from pathlib import Path 
+from pathlib import Path
 
 import typer
 
 from rich.console import Console
 
-from genmus import launcher
-
-import numpy as np
-
 cli = typer.Typer()
+
 
 @cli.command()
 
 # def getArguments(argv_list):
 # def getArguments(bighelp: bool = False, opt: str = "", dataFile: str = ""):
+
 
 def getArguments(
     bighelp: bool = False,
@@ -84,7 +77,12 @@ def getArguments(
         seq_dic = openFile.openFastaFile(dataFile)
         # print(f"getArgruments()  File opened :{data}")
         for i in seq_dic:
-        	print(launcher.printWithColour(launcher.BIGreen, f"\t [+=+] "), launcher.printWithColour(launcher.BIYellow, f"{i}"),":",launcher.printWithColour(launcher.BICyan, f"{seq_dic[i]}"))
+            print(
+                launcher.printWithColour(launcher.BIGreen, f"\t [+=+] "),
+                launcher.printWithColour(launcher.BIYellow, f"{i}"),
+                ":",
+                launcher.printWithColour(launcher.BICyan, f"{seq_dic[i]}"),
+            )
 
 
 # end of getArguments()
@@ -218,6 +216,7 @@ def getWordFreq(seq_str, freq_dic):  # string and word
 
 
 # end of getWordFreq()
+
 
 def begin(fastaFile_str):
     """Driver function"""
