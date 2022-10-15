@@ -32,7 +32,7 @@ import numpy as np
 @cli.command()
 
 # def getArguments(argv_list):
-def getArguments2(bighelp: bool = False, opt: str = ""):
+def getArguments(bighelp: bool = False, opt: str = ""):
     """New get arguments function"""
 
     if bighelp == True:  # print up some extra help about how to start a virtual env
@@ -62,87 +62,87 @@ def getArguments2(bighelp: bool = False, opt: str = ""):
         )
         exit()
 
-# end of getArguments2()
+# end of getArguments()
 
 
-def oldAetArguments(argv_list):
-    """A function to determine what parameters have been entered and then completed tasks"""
+# def oldAetArguments(argv_list):
+#     """A function to determine what parameters have been entered and then completed tasks"""
 
-    # print(argv_list)
+#     # print(argv_list)
 
-    param_1 = "FASTA"  # call for begin() with filename
-    param_2 = "-H"  # call for helper()
-    param_3 = "-T"  # call for a demo
-    param_4 = "-S"  # call for a scale demo
-    param_5 = "-E"  # print up extra help
+#     param_1 = "FASTA"  # call for begin() with filename
+#     param_2 = "-H"  # call for helper()
+#     param_3 = "-T"  # call for a demo
+#     param_4 = "-S"  # call for a scale demo
+#     param_5 = "-E"  # print up extra help
 
-    if len(argv_list) == 0:
-        # Output welcome message
-        # print(printWithColour(BICyan,gh.WHATISTHIS_p1))
-        print(gh.printWithColour(gh.BICyan, gh.WHATISTHIS_p2))
+#     if len(argv_list) == 0:
+#         # Output welcome message
+#         # print(printWithColour(BICyan,gh.WHATISTHIS_p1))
+#         print(gh.printWithColour(gh.BICyan, gh.WHATISTHIS_p2))
 
-    helperFlag_Bool = False
-    fastaFile_str = None  # file to open
-    for i in argv_list:
-        # print(BIRed + f"Checking <<{i}>>" + White)
-        if param_1 in i.upper():
-            print(i)
-            fastaFile_str = i
-            # print(f"\t CSV file found: {myfile_str}")
-        if param_2 == i.upper():
-            # print(f"\t Call to help found: {i}")
-            helperFlag_Bool = True
-            gh.helper()
-            exit()
+#     helperFlag_Bool = False
+#     fastaFile_str = None  # file to open
+#     for i in argv_list:
+#         # print(BIRed + f"Checking <<{i}>>" + White)
+#         if param_1 in i.upper():
+#             print(i)
+#             fastaFile_str = i
+#             # print(f"\t CSV file found: {myfile_str}")
+#         if param_2 == i.upper():
+#             # print(f"\t Call to help found: {i}")
+#             helperFlag_Bool = True
+#             gh.helper()
+#             exit()
 
-        if (
-            param_3 in i.upper()
-        ):  # automatically push all gradebook files into their corresponding repositories
-            # print(i)
-            names_list = [
-                "twinkle_star.wav",
-                "twinkle_star_left.wav",
-                "twinkle_star_right.wav",
-            ]
-            gh.makeMusicDemo(
-                names_list,
-                left_hand_notes,
-                left_hand_duration,
-                right_hand_notes,
-                right_hand_duration,
-            )
-            exit()
+#         if (
+#             param_3 in i.upper()
+#         ):  # automatically push all gradebook files into their corresponding repositories
+#             # print(i)
+#             names_list = [
+#                 "twinkle_star.wav",
+#                 "twinkle_star_left.wav",
+#                 "twinkle_star_right.wav",
+#             ]
+#             gh.makeMusicDemo(
+#                 names_list,
+#                 left_hand_notes,
+#                 left_hand_duration,
+#                 right_hand_notes,
+#                 right_hand_duration,
+#             )
+#             exit()
 
-        if (
-            param_4 in i.upper()
-        ):  # automatically push all gradebook files into their corresponding repositories
-            # print(i)
-            names_str = "scale"
-            # gh.makeMusicFromChars(names_str, sNotes_list, sDuration_list)
-            gh.makeMusicFromChars(names_str, sNotes_list, sDuration_list)
-            exit()
+#         if (
+#             param_4 in i.upper()
+#         ):  # automatically push all gradebook files into their corresponding repositories
+#             # print(i)
+#             names_str = "scale"
+#             # gh.makeMusicFromChars(names_str, sNotes_list, sDuration_list)
+#             gh.makeMusicFromChars(names_str, sNotes_list, sDuration_list)
+#             exit()
 
-        if (
-            param_5 in i.upper()
-        ):  # print up some extra help about how to start a virtual env
-            gh.helper()
-            gh.helper_extended()
-            exit()
+#         if (
+#             param_5 in i.upper()
+#         ):  # print up some extra help about how to start a virtual env
+#             gh.helper()
+#             gh.helper_extended()
+#             exit()
 
-        if (
-            param_1 not in i.upper()
-            and param_2 not in i.upper()
-            and param_3 not in i.upper()
-            and param_4 not in i.upper()
-            and param_5 not in i.upper()
-        ):
-            print(gh.printWithColour(gh.BICyan, gh.WHATISTHIS_p2))
-            exit()
+#         if (
+#             param_1 not in i.upper()
+#             and param_2 not in i.upper()
+#             and param_3 not in i.upper()
+#             and param_4 not in i.upper()
+#             and param_5 not in i.upper()
+#         ):
+#             print(gh.printWithColour(gh.BICyan, gh.WHATISTHIS_p2))
+#             exit()
 
-        if fastaFile_str != None:
-            begin(fastaFile_str)
-            exit()
-    # end of oldGetArguments()
+#         if fastaFile_str != None:
+#             begin(fastaFile_str)
+#             exit()
+#     # end of oldGetArguments()
 
 
 def begin(fastaFile_str):
@@ -179,4 +179,4 @@ def begin(fastaFile_str):
 
 
 if __name__ == "__main__":
-    getArguments2(sys.argv[1:])
+    getArguments(sys.argv[1:])
