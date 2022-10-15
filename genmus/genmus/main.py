@@ -12,13 +12,12 @@ from genmus import launcher as launcher
 
 # from scipy.io import wavfile
 
-from pathlib import Path # TODO look for file exists code
+from pathlib import Path 
 
 import typer
 
 from rich.console import Console
 
-cli = typer.Typer()
 
 from genmus import genmus_helper as gh
 import numpy as np
@@ -30,6 +29,7 @@ import numpy as np
 # pip install streamlit
 # pip install scipy
 
+cli = typer.Typer()
 
 @cli.command()
 
@@ -70,11 +70,14 @@ def getArguments(
             player.right_hand_duration,
         )
         exit()
-    if dataFile.lower:
-        dataFile = dir / dataFile
-        print(f"data file == {dataFile}")
-        launcher.isFileConfirmed(dataFile)
-
+    if file:
+        if dir:
+            dataFile = dir / file
+        else:
+            dataFile = file
+        print(f"getarguments() :: datafile = {dataFile}")
+        print(f" Is this a real file :: {launcher.isFileConfirmed(dataFile)}")
+        data = launcher.openFastaFile(dataFile)
 
 # end of getArguments()
 

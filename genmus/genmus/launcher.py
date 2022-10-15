@@ -15,8 +15,6 @@ def isFileConfirmed(file: Path) -> bool:
     # the file was either none or not valid
     return False
 # end of isFileConfirmed()
+
 def openFastaFile(fastafile: Path) -> dict:
     print(f" openFAstaFile() file is = {fastafile}")
-    if isFileConfirmed(fastaFile):
-        print(gh.printWithColour(gh.BIYellow, f"\t [+] File to open: {fastaFile}\n"))
-        seq_dic = gh.openDnaSeq(fastaFile)
