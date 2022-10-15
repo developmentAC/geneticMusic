@@ -582,7 +582,7 @@ def apply_pedal(note_values, bar_value):
         sum(note_values) % bar_value != 0
     ):  # This seems to fix a bug; both vars must be equal.
         # diff_flt = (sum(note_values) % bar_value) # remove this amount to get an even division
-        # print(printWithColour(BIRed,f"\t [+] Discrepancy, diff_flt = {diff_flt} from note_values type(note_values) = {type(note_values)}\n{note_values}."))
+        # print(launcher.printWithColour(launcher.BIRed,f"\t [+] Discrepancy, diff_flt = {diff_flt} from note_values type(note_values) = {type(note_values)}\n{note_values}."))
         # note_values.append(diff_flt)
         # note_values[len(note_values)-1] = 1#note_values[len(note_values)-1] + diff_flt
 
@@ -700,8 +700,8 @@ def makeMusicDemo(
         from scipy.io import wavfile
     except ModuleNotFoundError:
         print(
-            printWithColour(
-                BIRed,
+            launcher.printWithColour(
+                launcher.BIRed,
                 f"\t [+] The sciPy library is not installed.\n\t Please install, or use option -E \n\t to see other options to use {THISPROG}.",
             )
         )
@@ -745,8 +745,8 @@ def makeMusicFromChars(name_str : str, notes_list: list, duration_list: list):
         from scipy.io import wavfile
     except ModuleNotFoundError:
         print(
-            printWithColour(
-                BIRed,
+            launcher.printWithColour(
+                launcher.BIRed,
                 f"\t [+] The sciPy library is not installed.\n\t Please install, or use option -E \n\t to see other options to use {THISPROG}.",
             )
         )
@@ -760,7 +760,7 @@ def makeMusicFromChars(name_str : str, notes_list: list, duration_list: list):
     data = get_song_data(
         notes_list, duration_list, 2, factor, length, decay, sustain_level
     )
-    # print(printWithColour(BIRed,f"\t[+] data = {data}"))
+    # print(launcher.printWithColour(launcher.BIRed,f"\t[+] data = {data}"))
 
     # factor = [0.73, 0.16, 0.06, 0.01, 0.02, 0.01  , 0.01]
     # length = [0.01, 0.29, 0.6, 0.1]
