@@ -6,7 +6,7 @@
 
 # from collections import Counter
 import sys, random, csv, os
-from genmus import player as player
+from genmus import player
 from genmus import launcher as launcher
 
 
@@ -20,6 +20,8 @@ from rich.console import Console
 
 
 from genmus import genmus_helper as gh
+from genmus import launcher
+
 import numpy as np
 
 # Run notes:
@@ -45,14 +47,14 @@ def getArguments(
     """New get arguments function"""
 
     if bighelp == True:  # print up some extra help about how to start a virtual env
-        gh.helper()
+        launcher.helper()
         # gh.helper_extended()
         exit()
 
     if opt.lower() == "s":  # print up some extra help about how to start a virtual env
         names_str = "scale"
         # gh.makeMusicFromChars(names_str, sNotes_list, sDuration_list)
-        gh.makeMusicFromChars(names_str, player.sNotes_list, player.sDuration_list)
+        player.makeMusicFromChars(names_str, player.sNotes_list, player.sDuration_list)
         exit()
 
     if opt.lower() == "t":  # twinkle, twinkle, little star demo.
@@ -62,7 +64,7 @@ def getArguments(
             "twinkle_star_left.wav",
             "twinkle_star_right.wav",
         ]
-        gh.makeMusicDemo(
+        player.makeMusicDemo(
             names_list,
             player.left_hand_notes,
             player.left_hand_duration,
