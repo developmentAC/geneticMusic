@@ -29,8 +29,6 @@ import typer
 
 from rich.console import Console
 
-
-from genmus import genmus_helper as gh
 from genmus import launcher
 
 import numpy as np
