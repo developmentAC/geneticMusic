@@ -9,12 +9,10 @@ from genmus import openFile, player, launcher
 import numpy as np
 
 # from scipy.io import wavfile
-import sys, random, os
+import itertools, sys, random, os
 
 # from Bio import SeqIO #biopython
 from itertools import permutations
-
-# import itertools
 
 # from scipy.io import wavfile
 
@@ -26,12 +24,7 @@ from rich.console import Console
 
 cli = typer.Typer()
 
-
 @cli.command()
-
-# def getArguments(argv_list):
-# def getArguments(bighelp: bool = False, opt: str = "", dataFile: str = ""):
-
 
 def getArguments(
     bighelp: bool = False,
@@ -83,6 +76,7 @@ def getArguments(
                 ":",
                 launcher.printWithColour(launcher.BICyan, f"{seq_dic[i]}"),
             )
+        begin(seq_dic)
 
 
 # end of getArguments()
@@ -96,11 +90,11 @@ def pairMusicWordWithNote(this_dic, Twinkle_list):
     myMaxValueThisDic_int = max(this_dic.values())
     print(
         "\t Frequencies; ",
-        printWithColour(BIGreen, f"{this_dic}"),
+        launcher.printWithColour(launcher.BIGreen, f"{this_dic}"),
         "Max Value :",
-        printWithColour(BICyan, f" {myMaxValueThisDic_int}"),
+        launcher.printWithColour(launcher.BICyan, f" {myMaxValueThisDic_int}"),
     )
-    print("\t Twinkle_list =", printWithColour(BIGreen, f"{Twinkle_list}"))
+    print("\t Twinkle_list =", launcher.printWithColour(launcher.BIGreen, f"{Twinkle_list}"))
 
     # pull all same frequencies values from dic
     freq_dic = {}
@@ -218,34 +212,34 @@ def getWordFreq(seq_str, freq_dic):  # string and word
 # end of getWordFreq()
 
 
-def begin(fastaFile_str):
+def begin(seq_dic: dict) -> None:
     """Driver function"""
     # print(gh.printWithColour(gh.BIYellow, f"\t [+] File to open: {fastaFile_str}\n"))
     # seq_dic = gh.openDnaSeq(fastaFile_str)
-    freq_dic = gh.getWordCartesianProducts(
+    freq_dic = getWordCartesianProducts(
         ["A", "T", "C", "G"], 3
     )  # get the permutations of length 3 of ATGC words
-    # print(gh.printWithColour(gh.BIYellow,f"\n\t Frequencies of words from Freq_dic :\n\t {freq_dic},\n\t Number of words: {len(freq_dic)}"))
+    print(launcher.printWithColour(launcher.BIYellow,f"\n\t Frequencies of words from Freq_dic :\n\t {freq_dic},\n\t Number of words: {len(freq_dic)}"))
     print(f"freq_dic : {freq_dic}")
 
-    print(gh.printWithColour(gh.BIGreen, f"Preparing words..."))
+    print(launcher.printWithColour(launcher.BIGreen, f"Preparing words..."))
     # need to assign most common piano notes to most common words.
     for i in seq_dic:
         # for i in freq_dic:
         print(f"begin(): seq is {i}")
-        # print(gh.printWithColour(gh.BIBlue,f"\t {i}"),":", gh.printWithColour(gh.BIGreen,f"{seq_dic[i]}"))
-        this_dic = gh.getWordFreq(
+        # print(launcher.printWithColour(launcher.BIBlue,f"\t {i}"),":", launcher.printWithColour(launcher.BIGreen,f"{seq_dic[i]}"))
+        this_dic = getWordFreq(
             seq_dic[i], freq_dic
         )  # get the word counts from this seq.
 
-        # noteParing_dic = gh.pairMusicWordWithNote(this_dic, Twinkle_list) # Pair the highest word frequencies with most common piano notes
-        noteParing_dic = gh.pairMusicWordWithNote(
-            this_dic, sNotes_list
+        # noteParing_dic = launcher.pairMusicWordWithNote(this_dic, Twinkle_list) # Pair the highest word frequencies with most common piano notes
+        noteParing_dic = pairMusicWordWithNote(
+            this_dic, player.sNotes_list
         )  # Pair the highest word frequencies with most common piano notes
-        scaleNotes_list, scaleDuration_list = gh.sequenceSlidingWindow(
+        scaleNotes_list, scaleDuration_list = sequenceSlidingWindow(
             seq_dic[i], noteParing_dic
         )  # slide through the sequence, read words, then prepare a list of notes to play.
-        gh.makeMusicFromChars(i, scaleNotes_list, scaleDuration_list)
+        player.makeMusicFromChars(i, scaleNotes_list, scaleDuration_list)
         # gh.makeMusicFromChars(i, s_list, sd_list)
 
 
