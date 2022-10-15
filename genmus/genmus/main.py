@@ -32,7 +32,7 @@ import numpy as np
 @cli.command()
 
 # def getArguments(argv_list):
-def getArguments(bighelp: bool = False, opt: str = ""):
+def getArguments(bighelp: bool = False, opt: str = "", datafile: str = ""):
     """New get arguments function"""
 
     if bighelp == True:  # print up some extra help about how to start a virtual env
@@ -61,6 +61,9 @@ def getArguments(bighelp: bool = False, opt: str = ""):
             player.right_hand_duration,
         )
         exit()
+    if datafile.lower:
+        print(f"data file == {datafile}")
+
 
 # end of getArguments()
 
