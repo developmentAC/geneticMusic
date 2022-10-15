@@ -138,15 +138,6 @@ def helper():
         printWithColour(BICyan, "[--opt T]"),
         printWithColour(BIYellow, "Create song: Twinkle-Twinkle Little Star"),
     )
-    # print(
-    #     printWithColour(BIGreen, f"\t [+]"),
-    #     printWithColour(BICyan, "[--opt E]"),
-    #     printWithColour(
-    #         BIYellow, "Instructions for running this wonderous tool.\n\t\t"
-    #     ),
-    # )
-    # print(printWithColour(BIGreen,f"\n\t[+] \U0001f600 USAGE: ./{THISPROG}  dnaFile.fasta"))
-    
     print(
         printWithColour(BICyan, "\t [+] Setup with Poetry : "),
         printWithColour(BIYellow, "poetry install"),
@@ -167,14 +158,6 @@ def helper_extended():
     print(printWithColour(BIBlue, "\n\t # --------------------------"))
     print(printWithColour(BIGreen, f"\n\t You are to run {THISPROG} using poetry."))
 
-    # print(printWithColour(BIGreen,"\n\t # Running the container"))
-    # print(printWithColour(BICyan,"\t Linux:"), printWithColour(BIYellow,"sh dockerRunScripts/run_linux.sh"))
-    # print(printWithColour(BICyan,"\t MacOS:"), printWithColour(BIYellow,"sh dockerRunScripts/run_macOS.sh"))
-    # print(printWithColour(BICyan,"\t Windows:"), printWithColour(BIYellow,"dockerRunScripts\\run_win.bat"))
-
-    # Check what has been installed.
-    # python3 -m pip freeze > requirements.txt
-
     # end of helper_extended()
 
 
@@ -190,8 +173,6 @@ def printWithColour(colCode_str, myMessage_str):
     return myMessage_str
 
 # end of printWithColour()
-
-
 
 def checkDataDir(dir_str):
     # function to determine whether a data output directory exists.
@@ -234,6 +215,3 @@ def isFileConfirmed(file: Path) -> bool:
     # the file was either none or not valid
     return False
 # end of isFileConfirmed()
-
-def openFastaFile(fastafile: Path) -> dict:
-    print(f" openFAstaFile() file is = {fastafile}")
