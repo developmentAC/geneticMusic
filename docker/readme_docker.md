@@ -11,7 +11,7 @@ The following bash scripts simplify building the container.
 These files may be found in the directory, `docker/`
 and the builder require a copy of `Dockerfile` to run
 which is in the `src` directory,
-hence why these command should be 
+hence why these command should be
 run from the `src` directory like in the example above.
 
 These files may be found in the main directory and the builder
