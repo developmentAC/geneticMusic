@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get -y install git htop vim python3.10 python3-pip curl clustalw
+RUN apt-get update && apt-get -y install git htop vim python3.10 python3-pip curl
 
 
 RUN \
