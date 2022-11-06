@@ -10,7 +10,8 @@
 
 import numpy as np
 from genmus import launcher
-
+import os
+# from playsound import playsound
 ###########################
 
 right_hand_notes = [
@@ -717,7 +718,7 @@ def makeMusicDemo(
     right_hand_notes=[],
     right_hand_duration=[],
 ):
-
+    print("\t Playing a demo ...")
     try:
         from scipy.io import wavfile
     except ModuleNotFoundError:
@@ -756,7 +757,8 @@ def makeMusicDemo(
     wavfile.write(launcher.MYOUTPUT_DIR + names_list[0], 44100, data.astype(np.int16))
     wavfile.write(launcher.MYOUTPUT_DIR + names_list[1], 44100, data_l.astype(np.int16))
     wavfile.write(launcher.MYOUTPUT_DIR + names_list[2], 44100, data_r.astype(np.int16))
-
+    filename = launcher.MYOUTPUT_DIR + names_list[2]
+    playSound(filename)
 
 # end of makeMusicDemo()
 
@@ -807,6 +809,14 @@ def makeMusicFromChars(name_str: str, notes_list: list, duration_list: list):
             launcher.BICyan, f"\t[+] Saving <{filename}>\n" + launcher.White
         )
     )
-
-
+    playSound(filename)
 # end of makeMusicFromChars()
+
+def playSound(fname_str: str) -> None:
+    """ plays the outputted wav file """
+    print(f"\t [+] PLAYING Music file :{fname_str}")
+    # playsound(fname)
+    os.system(f"aplay {fname_str}")
+
+
+
