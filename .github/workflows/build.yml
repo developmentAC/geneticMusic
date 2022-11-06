@@ -43,11 +43,11 @@ jobs:
           run: |
             pip install -U pip
         # Install pipenv
-        - name: Install Pipenv
-          if: always()
-          run: |
-            pip install pipenv
-        # Install poetry
+        # - name: Install Pipenv
+        #   if: always()
+        #   run: |
+        #     pip install pipenv
+        # # Install poetry
         - name: Install Poetry
           if: always()
           uses: abatilo/actions-poetry@v2.0.0
@@ -59,7 +59,7 @@ jobs:
           run: |
             cd genmus
             poetry install
-            poetry run genmus  --help
+            poetry run genmus --bighelp
         # Run the black code formatter in checking mode
         - name: Run Black Code Formatter
           run: |
