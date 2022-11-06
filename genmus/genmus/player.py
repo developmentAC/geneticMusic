@@ -11,6 +11,7 @@
 import numpy as np
 from genmus import launcher
 import os
+
 # from playsound import playsound # does not seem to work with poetry add playsound...
 
 
@@ -407,12 +408,64 @@ sd_list = [
 # "C3","C3","C3","D3","C3","F3","E3","C3","C3","D3","C3","G3","F3","C3","C3","C3","A3","F3","E3","D3","B4","B4","A3","F3","G3","F3"]
 
 # happybirthday
-HB_list = [ "C3","C3","D3","C3","F3","E3","C3","C3","D3","C3","G3","F3","C3","C3","A3","F3","E3","D3","B3","B3","A3","F3","G3","F3"]
+HB_list = [
+    "C3",
+    "C3",
+    "D3",
+    "C3",
+    "F3",
+    "E3",
+    "C3",
+    "C3",
+    "D3",
+    "C3",
+    "G3",
+    "F3",
+    "C3",
+    "C3",
+    "A3",
+    "F3",
+    "E3",
+    "D3",
+    "B3",
+    "B3",
+    "A3",
+    "F3",
+    "G3",
+    "F3",
+]
 # old     # "C3","C3","C3","D3","C3","F3","E3","C3","C3","D3","C3","G3","F3","C3","C3","C3","A3","F3","E3","D3","B4","B4","A3","F3","G3","F3"]
 
 
-HB_sd_list = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5
+HB_sd_list = [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
 ]
+
 
 def get_piano_notes():
     """
@@ -762,6 +815,7 @@ def makeMusicDemo(
     filename = launcher.MYOUTPUT_DIR + names_list[2]
     playSound(filename)
 
+
 # end of makeMusicDemo()
 
 
@@ -812,13 +866,13 @@ def makeMusicFromChars(name_str: str, notes_list: list, duration_list: list):
         )
     )
     playSound(filename)
+
+
 # end of makeMusicFromChars()
 
+
 def playSound(fname_str: str) -> None:
-    """ plays the outputted wav file """
+    """plays the outputted wav file"""
     print(f"\t [+] PLAYING Music file :{fname_str}")
     # playsound(fname)
-    os.system(f"aplay {fname_str}") # this may only work on linux machines...
-
-
-
+    os.system(f"aplay {fname_str}")  # this may only work on linux machines...

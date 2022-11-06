@@ -33,7 +33,8 @@ def openFastaFile(fastaFile_str: str) -> dict:
     if len(seq_dic) == 0:
         print(
             launcher.printWithColour(
-                launcher.BIRed, f"\t [+] Bad format or incorrect Fasta file: <<{fastaFile_str}>>"
+                launcher.BIRed,
+                f"\t [+] Bad format or incorrect Fasta file: <<{fastaFile_str}>>",
             )
         )
         exit()
