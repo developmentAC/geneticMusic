@@ -137,6 +137,11 @@ def helper():
         printWithColour(BIYellow, "Create song: Twinkle-Twinkle Little Star"),
     )
     print(
+        printWithColour(BIGreen, f"\t [+]"),
+        printWithColour(BICyan, "[--opt H]"),
+        printWithColour(BIYellow, "Create song: Happy Birthday"),
+    )
+    print(
         printWithColour(BICyan, "\t [+] Setup with Poetry : "),
         printWithColour(BIYellow, "poetry install"),
     )
