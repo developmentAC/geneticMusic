@@ -63,7 +63,7 @@ def getArguments(
     if opt.lower() == "h":  # play happy birthday
         names_str = "happy_birthday"
         player.makeMusicFromChars(names_str, player.HB_list, player.HB_sd_list)
-        playSound() ###################
+        # playSound() ###################
         exit()
 
     if file:
