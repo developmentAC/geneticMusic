@@ -641,17 +641,19 @@ def apply_pedal(note_values, bar_value):
     """
 
     # print("apply_pedal()")
-    print(
-        launcher.printWithColour(
-            launcher.BIBlue, f"\t[+] Initial bar_value = {bar_value}"
-        )
-    )
-    print(
-        launcher.printWithColour(
-            launcher.BIBlue, f"\t[+] sum(note_values) = {sum(note_values)}"
-        )
-    )
-    # print(launcher.printWithColour(BIRed,f" note_values = {note_values}"))
+
+    # print(
+    #     launcher.printWithColour(
+    #         launcher.BIBlue, f"\t [+] Initial bar_value = {bar_value}"
+    #     )
+    # )
+    # print(
+    #     launcher.printWithColour(
+    #         launcher.BIBlue, f"\t [+] sum(note_values) = {sum(note_values)}"
+    #     )
+    # )
+
+    # print(launcher.printWithColour(launcher.BIRed,f" note_values = {note_values}"))
 
     if (
         sum(note_values) % bar_value != 0
@@ -670,12 +672,13 @@ def apply_pedal(note_values, bar_value):
             # print(f"counter = {counter}, sum(note_values) = {sum(note_values)}")
         bar_value = counter
 
-    print(
-        launcher.printWithColour(
-            launcher.BIBlue, f"\t[+] Reset bar_value = {bar_value}"
-        )
-    )
-    # print(launcher.printWithColour(launcher.BIGreen,f"\t[+] sum(note_values) = {sum(note_values)}"))
+    # print(
+    #     launcher.printWithColour(
+    #         launcher.BIBlue, f"\t [+] Reset bar_value = {bar_value}"
+    #     )
+    # )
+
+    # print(launcher.printWithColour(launcher.BIGreen,f"\t [+] sum(note_values) = {sum(note_values)}"))
 
     assert sum(note_values) % bar_value == 0
 
@@ -840,25 +843,12 @@ def makeMusicFromChars(name_str: str, notes_list: list, duration_list: list):
     data = get_song_data(
         notes_list, duration_list, 2, factor, length, decay, sustain_level
     )
-    # print(launcher.printWithColour(launcher.BIRed,f"\t[+] data = {data}"))
-
-    # factor = [0.73, 0.16, 0.06, 0.01, 0.02, 0.01  , 0.01]
-    # length = [0.01, 0.29, 0.6, 0.1]
-    # decay = [0.05,0.02,0.005,0.1]
-    # left_hand = get_song_data(left_hand_notes, left_hand_duration, 2, factor, length, decay, sustain_level)
-
-    # data = left_hand + right_hand
-    # data_l = left_hand
-    # data_r = right_hand
 
     data = data * (4096 / np.max(data))
-    # data_l = data_l * (4096/np.max(data_l))
-    # data_r = data_r * (4096/np.max(data_r))
-    #
+
     launcher.checkDataDir(launcher.MYOUTPUT_DIR)
     name_str = name_str + ".wav"
     filename = launcher.MYOUTPUT_DIR + name_str
-    # wavfile.write(launcher.MYOUTPUT_DIR + name_str, 44100, data.astype(np.int16))
     wavfile.write(filename, 44100, data.astype(np.int16))
     print(
         launcher.printWithColour(
@@ -873,6 +863,11 @@ def makeMusicFromChars(name_str: str, notes_list: list, duration_list: list):
 
 def playSound(fname_str: str) -> None:
     """plays the outputted wav file"""
-    print(f"\t [+] PLAYING Music file :{fname_str}")
-    # playsound(fname)
-    os.system(f"aplay {fname_str}")  # this may only work on linux machines...
+    print(launcher.BIGreen + f"\t [+] PLAYING Music file :{fname_str}" + launcher.BIWhite)
+    platform_str = launcher.get_platformType()
+    if platform_str.lower() == "linux":
+        myMessage_str = launcher.BIYellow + "\t [+] Playing music (using aplay on Linux)" + launcher.BIWhite    
+        os.system(f"aplay {fname_str}")  # this may only work on linux machines...
+    if platform_str.lower() == "osx":
+        myMessage_str = launcher.BIYellow + "\t [+] Playing music (using (afplay on MacOS)" + launcher.BIWhite    
+        os.system(f"afplay {fname_str}")  # this may only work on linux machines...
