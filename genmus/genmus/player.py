@@ -818,7 +818,7 @@ def playSound(fname_str: str) -> None:
     """ plays the outputted wav file """
     print(f"\t [+] PLAYING Music file :{fname_str}")
     # playsound(fname)
-    os.system(f"aplay {fname_str}")
+    os.system(f"aplay {fname_str}") # this may only work on linux machines...
 
 
 
