@@ -866,8 +866,10 @@ def playSound(fname_str: str) -> None:
     print(launcher.BIGreen + f"\t [+] PLAYING Music file :{fname_str}" + launcher.BIWhite)
     platform_str = launcher.get_platformType()
     if platform_str.lower() == "linux":
-        myMessage_str = launcher.BIYellow + "\t [+] Playing music (using aplay on Linux)" + launcher.BIWhite    
+        myMessage_str = launcher.BIYellow + "\t [+] Playing music (using aplay on Linux)" + launcher.BIWhite
+        print(myMessage_str)
         os.system(f"aplay {fname_str}")  # this may only work on linux machines...
     if platform_str.lower() == "osx":
-        myMessage_str = launcher.BIYellow + "\t [+] Playing music (using (afplay on MacOS)" + launcher.BIWhite    
+        myMessage_str = launcher.BIYellow + "\t [+] Playing music (using (afplay on MacOS)" + launcher.BIWhite
+        print(myMessage_str)
         os.system(f"afplay {fname_str}")  # this may only work on linux machines...
