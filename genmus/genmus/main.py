@@ -25,7 +25,6 @@ from rich.console import Console
 cli = typer.Typer()
 
 @cli.command()
-
 def getArguments(
     bighelp: bool = False,
     opt: str = "",
@@ -39,7 +38,7 @@ def getArguments(
         # gh.helper_extended()
         exit()
 
-    if opt.lower() == "s":  # print up some extra help about how to start a virtual env
+    if opt.lower() == "s":  # play scalerint up some extra help about how to start a virtual env
         names_str = "scale"
         # gh.makeMusicFromChars(names_str, sNotes_list, sDuration_list)
         player.makeMusicFromChars(names_str, player.sNotes_list, player.sDuration_list)
@@ -60,6 +59,12 @@ def getArguments(
             player.right_hand_duration,
         )
         exit()
+
+    if opt.lower() == "h":  # play happy birthday
+        names_str = "happy_birthday"
+        player.makeMusicFromChars(names_str, player.HB_list, player.HB_sd_list)
+        exit()
+
     if file:
         if dir:
             dataFile = dir / file

@@ -399,6 +399,12 @@ sd_list = [
 
 ###########################
 
+# happybirthday
+HB_list = [
+"C3","C3","C3","D3","C3","F3","E3","C3","C3","D3","C3","G3","F3","C3","C3","C3","A3","F3","E3","D3","B4","B4","A3","F3","G3","F3"]
+
+HB_sd_list = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5
+]
 
 def get_piano_notes():
     """
@@ -761,7 +767,7 @@ def makeMusicFromChars(name_str: str, notes_list: list, duration_list: list):
                 f"\t [+] The sciPy library is not installed.\n\t Please install, or use option -E \n\t to see other options to use {THISPROG}.",
             )
         )
-        exit()
+        # exit()
     # print("makeMusicFromChars()")
 
     factor = [0.68, 0.26, 0.03, 0.0, 0.03]
