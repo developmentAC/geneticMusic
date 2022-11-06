@@ -11,7 +11,9 @@
 import numpy as np
 from genmus import launcher
 import os
-# from playsound import playsound
+# from playsound import playsound # does not seem to work with poetry add playsound...
+
+
 ###########################
 
 right_hand_notes = [
