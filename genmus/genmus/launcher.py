@@ -142,6 +142,11 @@ def helper():
         printWithColour(BIYellow, "Create song: Happy Birthday"),
     )
     print(
+        printWithColour(BIGreen, f"\t [+]"),
+        printWithColour(BICyan, "[--data ./data --file file.fasta]"),
+        printWithColour(BIYellow, "Load fasta file, convert dna to score"),
+    )
+    print(
         printWithColour(BICyan, "\t [+] Setup with Poetry : "),
         printWithColour(BIYellow, "poetry install"),
     )
@@ -149,7 +154,7 @@ def helper():
     print(
         printWithColour(
             BIGreen,
-            f"\n\t [+] \U0001f600 USAGE: poetry run {THISPROG} --dir data/ --file mydata.fasta ",
+            f"\n\t [+] \U0001f600 USAGE: poetry run {THISPROG} --dir ./data/ --file mydata.fasta ",
         )
     )
     print(printWithColour(BIBlue, "\n\t # --------------------------"))
