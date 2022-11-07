@@ -6,8 +6,6 @@
 ---
 ![logo](graphics/logo.png)
 
-![logo](/tmp/beagleTM_logo2.png)
-
 Genetic Music: Use your ears to study DNA!!
 
 ## Description
