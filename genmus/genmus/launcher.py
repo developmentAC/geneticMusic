@@ -147,7 +147,8 @@ def helper():
         printWithColour(BIYellow, "Load fasta file, convert dna to score"),
     )
     print(
-        printWithColour(BICyan, "\t [+] Setup with Poetry : "),
+        printWithColour(BIGreen, f"\t [+]"),
+        printWithColour(BICyan, "Setup with Poetry : "),
         printWithColour(BIYellow, "poetry install"),
     )
 
