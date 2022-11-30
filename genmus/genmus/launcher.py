@@ -4,7 +4,7 @@
 
 
 DATE = "15 October 2022"
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 AUTHOR = "Oliver Bonham-Carter"
 AUTHORMAIL = "obonhamcarter@allegheny.edu"
 
