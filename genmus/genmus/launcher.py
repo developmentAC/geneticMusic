@@ -200,8 +200,6 @@ def checkDataDir(dir_str):
     except OSError:
         # printErrorByPlatform("\t Error creating directory or directory already present ... ")
         return 0
-
-
 # end of checkDataDir()
 
 
@@ -216,8 +214,6 @@ def get_platformType():
     if sys.platform not in platforms:
         return sys.platform
     return platforms[sys.platform]
-
-
 # end of get_platformType()
 
 
