@@ -37,7 +37,7 @@ DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA fil
    + `poetry run genmus --opt T`
 * To prepare and play Happy Birthday (sort of)
    + `poetry run genmus --opt H`
-* To prepare and play some genetic music from a DNA in `fasta` data file (`mydata.fasta`)
+* To prepare and play some genetic music from a DNA in `fasta` data file (`mydata.fasta`) which is located in `./data/`
    + `poetry run genmus --dir ./data/ --file mydata.fasta ` 
 
 
