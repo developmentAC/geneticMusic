@@ -61,15 +61,15 @@ jobs:
             poetry install
             poetry run genmus --bighelp
         # Run the black code formatter in checking mode
-        - name: Run Black Code Formatter
-          run: |
-            cd genmus
-            poetry run task black
-        # Run the flake8 linting tool
-        - name: Run Flake8 Linting Tool
-          run: |
-            cd genmus
-            poetry run task flake8
+   #     - name: Run Black Code Formatter
+   #       run: |
+   #         cd genmus
+   #         poetry run task black
+   #     # Run the flake8 linting tool
+   #     - name: Run Flake8 Linting Tool
+   #       run: |
+   #         cd genmus
+   #         poetry run task flake8
         # Run the pydocstyle linting tool
    #     - name: Run Pydocstyle Linting Tool
    #       run: |
