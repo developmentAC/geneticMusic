@@ -11,7 +11,7 @@ genmus = "genmus.main:cli"
 [tool.poetry.dependencies]
 #python = ">=3.10,<3.12" #working
 python = ">=3.8,<3.12"
-scipy = "1.9.1"
+scipy = "= 1.10.0"
 rich = "^12.6.0"
 typer = "^0.6.1"
 biopython = "^1.79"
