@@ -7,6 +7,14 @@
 
 Genetic Music: Use your ears to study DNA!!
 
+## Table of Contents
+
+- [Description](#description)
+- [Running the code](#running-the-code)
+- [Command Summary](#command-summary)
+- [Mechanism](#mechanism)
+- [Future Work](future-work)
+
 ## Description
 
 DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA files.
@@ -33,7 +41,8 @@ DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA fil
    + `poetry run genmus --dir ./data/ --file mydata.fasta ` 
 
 
-## How does Music Come From DNA Sequence?!
+## Mechanism
+How does Music Come From DNA Sequence?!
 
 As you may know, protein is synthesized from
 amino acids. Each amino acid is encoded by
@@ -71,7 +80,7 @@ recognize codons and play a note that conforms
 to its frequency, in conjunction with that of
 frequency of notes of the song.   
 
-### Documentation to come
+### Future Work
 
 This is a program to convert DNA sequences to piano music.
 The documentation for this project is coming soon to help
