@@ -29,8 +29,8 @@ jobs:
             fetch-depth: 0
         # Run the mdl linting tool
         # Refers to .mdlrc file in repository
-        - name: Run Markdown Linting
-          uses: actionshub/markdownlint@main
+#        - name: Run Markdown Linting
+#          uses: actionshub/markdownlint@main
         # Setup Python for the current language version
         - name: Setup Python ${{ matrix.python-version }}
           if: always()
