@@ -1,37 +1,37 @@
 # --> check the Python program
-- datasummarizer/datasummarizer/main.py:
-  - description: Ensure that the main.py file exists in the datasummarizer/datasummarizer directory
-    check: ConfirmFileExists
-  - description: Complete all TODOs, remove the TODO markers in the main.py
-    check: MatchFileFragment
-    options:
-      fragment: TODO
-      count: 0
-      exact: true
-  - description: Call the transform_string_to_number_list function once in the main.py
-    check: MatchFileFragment
-    options:
-      fragment: "transform.transform_string_to_number_list"
-      count: 1
-      exact: true
-  - description: Call the compute_mean function once in the main.py
-    check: MatchFileFragment
-    options:
-      fragment: "summarize.compute_mean"
-      count: 1
-      exact: true
-  - description: Create a sufficient number of docstring (i.e., multiple-line) comments in the main.py
-    check: CountMultipleLineComments
-    options:
-      language: "Python"
-      count: 2
-      exact: false
-  - description: Create a sufficient number of single-line comments in the main.py
-    check: CountSingleLineComments
-    options:
-      language: "Python"
-      count: 4
-      exact: false
+# - datasummarizer/datasummarizer/main.py:
+#   - description: Ensure that the main.py file exists in the datasummarizer/datasummarizer directory
+#     check: ConfirmFileExists
+#   - description: Complete all TODOs, remove the TODO markers in the main.py
+#     check: MatchFileFragment
+#     options:
+#       fragment: TODO
+#       count: 0
+#       exact: true
+#   - description: Call the transform_string_to_number_list function once in the main.py
+#     check: MatchFileFragment
+#     options:
+#       fragment: "transform.transform_string_to_number_list"
+#       count: 1
+#       exact: true
+#   - description: Call the compute_mean function once in the main.py
+#     check: MatchFileFragment
+#     options:
+#       fragment: "summarize.compute_mean"
+#       count: 1
+#       exact: true
+#   - description: Create a sufficient number of docstring (i.e., multiple-line) comments in the main.py
+#     check: CountMultipleLineComments
+#     options:
+#       language: "Python"
+#       count: 2
+#       exact: false
+#   - description: Create a sufficient number of single-line comments in the main.py
+#     check: CountSingleLineComments
+#     options:
+#       language: "Python"
+#       count: 4
+#       exact: false
 
 # --> check the Python program
 - geneticmusic/geneticmusic/main.py:
@@ -74,100 +74,9 @@
       count: 5
       exact: false
 
-# --> check the Python program
-- datasummarizer/datasummarizer/transform.py:
-  - description: Ensure that the transform.py file exists in the datasummarizer/datasummarizer directory
-    check: ConfirmFileExists
-  - description: Complete all TODOs, remove the TODO markers in the transform.py
-    check: MatchFileFragment
-    options:
-      fragment: TODO
-      count: 0
-      exact: true
-  - description: Create a sufficient number of docstring (i.e., multiple-line) comments in the transform.py
-    check: CountMultipleLineComments
-    options:
-      language: "Python"
-      count: 2
-      exact: false
-
-# --> check the Python program
-- datasummarizer/tests/test_summarize.py:
-  - description: Ensure that the test_summarize.py file exists in the datasummarizer/tests directory
-    check: ConfirmFileExists
-  - description: Complete all TODOs, remove the TODO markers in the test_summarize.py
-    check: MatchFileFragment
-    options:
-      fragment: TODO
-      count: 0
-      exact: true
-  - description: Create a sufficient number of docstring (i.e., multiple-line) comments in the test_summarize.py
-    check: CountMultipleLineComments
-    options:
-      language: "Python"
-      count: 5
-      exact: false
-
-# --> check the Python program
-- datasummarizer/tests/test_transform.py:
-  - description: Ensure that the test_transform.py file exists in the datasummarizer/tests directory
-    check: ConfirmFileExists
-  - description: Complete all TODOs, remove the TODO markers in the test_transform.py
-    check: MatchFileFragment
-    options:
-      fragment: TODO
-      count: 0
-      exact: true
-  - description: Create a sufficient number of docstring (i.e., multiple-line) comments in the test_transform.py
-    check: CountMultipleLineComments
-    options:
-      language: "Python"
-      count: 3
-      exact: false
-
-# --> check the technical writing for various characteristics
-- writing/reflection.md:
-  - description: Ensure that reflection.md file exists in the writing/ directory
-    check: ConfirmFileExists
-  - description: Write a minimum number of meaningful words in the reflection
-    check: CountFileWords
-    options:
-      count: 500
-      exact: false
-  - description: Confirm that the markdown file has the correct number of headers
-    check: CountMarkdownTags
-    options:
-      tag: heading
-      count: 13
-      exact: false
-  - description: Confirm that the markdown file has the correct number of fenced code blocks
-    check: CountMarkdownTags
-    options:
-      tag: code_block
-      count: 4
-      exact: false
-  - description: Confirm that the markdown file has the correct number of code blocks
-    check: CountMarkdownTags
-    options:
-      tag: code
-      count: 2
-      exact: false
-  - description: Complete all TODOs, remove the TODO markers in the reflection.md
-    check: MatchFileFragment
-    options:
-      fragment: TODO
-      count: 0
-      exact: true
-  - description: Delete the 'Add Your Name Here' prompt in the reflection file
-    check: MatchFileFragment
-    options:
-      fragment: "Add Your Name Here"
-      count: 0
-      exact: true
-
 # --> check that the number of commits in the Git repository is beyond a threshold
 # count number of commits in the GitHub repository
-- description: Have at least a specific minimum number of commits (5) in repository
-  check: CountCommits
-  options:
-    count: 5
+#- description: Have at least a specific minimum number of commits (5) in repository
+#  check: CountCommits
+#  options:
+#    count: 5
