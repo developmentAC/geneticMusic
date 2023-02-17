@@ -62,7 +62,7 @@ frequency of notes of the song.
 
 ### Documentation to come
 
-This is a program to convert DNA sequenes to piano music.
+This is a program to convert DNA sequences to piano music.
 The documentation for this project is coming soon to help
 users to use and enjoy this project. In the meantime,
 there is online help in the Python code to help the
