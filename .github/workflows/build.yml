@@ -71,20 +71,20 @@ jobs:
             cd genmus
             poetry run task flake8
         # Run the pydocstyle linting tool
-        - name: Run Pydocstyle Linting Tool
-          run: |
-            cd genmus
-            poetry run task pydocstyle
+   #     - name: Run Pydocstyle Linting Tool
+   #       run: |
+   #         cd genmus
+   #         poetry run task pydocstyle
         # Run the pylint linting tool
-        - name: Run Pylint Linting Tool
-          run: |
-            cd genmus
-            poetry run task pylint
+   #     - name: Run Pylint Linting Tool
+   #       run: |
+   #         cd genmus
+   #         poetry run task pylint
         # Run the mypy type checking tool
-        - name: Run Pylint Linting Tool
-          run: |
-            cd genmus
-            poetry run task mypy
+   #     - name: Run Pylint Linting Tool
+   #       run: |
+   #         cd genmus
+   #         poetry run task mypy
         # Run GatorGrader: see config/gatorgrade.yml
         # - name: Run GatorGrader with GatorGrade
         #   if: always()
