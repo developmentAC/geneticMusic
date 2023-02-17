@@ -13,7 +13,7 @@ Genetic Music: Use your ears to study DNA!!
 - [Running the code](#running-the-code)
 - [Command Summary](#command-summary)
 - [Mechanism](#mechanism)
-- [Future Work](future-work)
+- [Future Work](#future-work)
 
 ## Description
 
