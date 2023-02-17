@@ -22,6 +22,17 @@ DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA fil
 
      😀 USAGE: poetry run genmus --dir ./data/ --file mydata.fasta 
 
+## Command Summary
+* To prepare and play a basic scale
+   + `poetry run genmus --opt s`
+* To prepare and play Twinkle-Twinkle little star
+   + `poetry run genmus --opt T`
+* To prepare and play Happy Birthday (sort of)
+   + `poetry run genmus --opt H`
+* To prepare and play some genetic music from a DNA in `fasta` data file (`mydata.fasta`)
+   + `poetry run genmus --dir ./data/ --file mydata.fasta ` 
+
+
 ## How does Music Come From DNA Sequence?!
 
 As you may know, protein is synthesized from
