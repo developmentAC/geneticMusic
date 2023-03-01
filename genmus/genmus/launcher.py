@@ -143,7 +143,7 @@ def helper():
     )
     print(
         printWithColour(BIGreen, f"\t [+]"),
-        printWithColour(BICyan, "[--data ./data --file file.fasta]"),
+        printWithColour(BICyan, "[--dir ./data --file file.fasta]"),
         printWithColour(BIYellow, "Load fasta file, convert dna to score"),
     )
     print(
