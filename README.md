@@ -1,4 +1,4 @@
-# genmus: a Genetic Music Player
+# Genmus: a Genetic Music Player
 ### Oliver Bonham-Carter, [Allegheny College](https://allegheny.edu/)
 ### email: obonhamcarter@allegheny.edu
 
