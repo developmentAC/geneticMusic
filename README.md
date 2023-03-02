@@ -86,7 +86,7 @@ The inputs for this program are DNA sequences as
 `fasta` files. These sequences can be obtained
 from GenBank files using the using the 
 [_GetCodingSeqs (GCS)_](https://github.com/developmentAC/GetCodingSeqs_)
-tool by the same author. GCS produces fasta files
+tool by the same author. GCS produces `fasta` files
 containing coding and non-coding sequences as outlined in
 GenBank records. All these sequences can then be fed into GenMus,
 or seemingly any tool that inputs `fasta` files. Lucky for you that this
