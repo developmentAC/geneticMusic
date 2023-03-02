@@ -80,6 +80,18 @@ recognize codons and play a note that conforms
 to its frequency, in conjunction with that of
 frequency of notes of the song.   
 
+### Data
+
+The inputs for this program are DNA sequences as
+`fasta` files. These sequences can be obtained
+from GenBank files using the using the 
+[_GetCodingSeqs (GCS)_](https://github.com/developmentAC/GetCodingSeqs_)
+tool by the same author. GCS produces fasta files
+containing coding and non-coding sequences as outlined in
+GenBank records. All these sequences can then be fed into GenMus,
+or seemingly any tool that inputs `fasta` files. Lucky for you that this
+data can be created so easily, right?!
+
 ### Future Work
 
 This is a program to convert DNA sequences to piano music.
