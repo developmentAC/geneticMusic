@@ -21,7 +21,7 @@ DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA fil
 
 ## Running the code
 
-You must first install [Poetry](https://python-poetry.org/) to manage the sode's dependencies, and to run the program.
+You must first install [Poetry](https://python-poetry.org/) to manage the code's dependencies, and to run the program.
 
 	 [--bighelp] This page, right?
 	 [--opt S] Create a music scale
