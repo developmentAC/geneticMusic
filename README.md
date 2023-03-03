@@ -21,6 +21,8 @@ DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA fil
 
 ## Running the code
 
+You must first install [Poetry](https://python-poetry.org/) to manage the sode's dependencies, and to run the program.
+
 	 [--bighelp] This page, right?
 	 [--opt S] Create a music scale
 	 [--opt T] Create song: Twinkle-Twinkle Little Star
@@ -40,6 +42,7 @@ DNA to Piano Music Converter: Put DNA sequences into piano from PubMed FASTA fil
 * To prepare and play some genetic music from a DNA in `fasta` data file (`mydata.fasta`) which is located in `./data/`
    + `poetry run genmus --dir ./data/ --file mydata.fasta ` 
 
+**OUTPUT**: All output wav files are saved in the directory `0_out/
 
 ## Mechanism
 How does Music Come From DNA Sequence?!
