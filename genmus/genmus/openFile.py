@@ -5,7 +5,6 @@ from genmus import launcher
 
 """ This file contains code to facilitate loading files and running the program. """
 
-
 def openFastaFile(fastaFile_str: str) -> dict:
     """open a fasta file, return the dna sequences"""
 
